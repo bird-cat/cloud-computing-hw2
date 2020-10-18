@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		    <meta charset="utf-8">
-	</head>
-	 
-	<boy>    <p>Your name:</p>
-	    <p><input name="username" id="username_input"></p>
+<head>
+    <meta charset="utf-8">
+</head>
+ 
+<body>
+    <p>Your name:</p>
+    <p><input name="username" id="username_input"></p>
 
-	        <p>Your student id:</p>
-		    <p><input student_id="student id" id="student_id_input"></p>
+    <p>Your student id:</p>
+    <p><input student_id="student id" id="student_id_input"></p>
 
-		        <p>Your birtday:</p>
-			    p><input birthday="birthday" id="birthday_input"></p>
+    <p>Your birthday:</p>
+    <p><input birthday="birthday" id="birthday_input"></p>
 
-			        <p>Your cellphone number:</p>
-				    <p><inpt cllphone="cellphone number" id="cellphone_number_input"></p>
-				        
-				        <button type="submit" onclick="link_url()" id="btn">Add</button>
-					   <br>
-					       <pre></pre>
-					           
-					           <script type="text/javascript">
-							           function link_url() {
-									               var username_input = document.getElementById("username_input");
-									               var student_id_input = document.getElementById("student_id_input");
-									               var birthday_input = document.getElementById("birthday_input");
-									              var cellphone_number_input = document.getElementById("cellphone_number_input");
-									               const proxyurl = "https://cors-anywhere.herokuapp.com/";
-									               const url = 'https://wmwit203j3.execute-api.us-east-1.amazonaws.com/post';
-									              const data_dict = {
-											                      "name": username_input.value,
-											                      "student id": student_id_input.value,
-											                      "birthday": birthday_input.value,
-											                      "cellphone": cellphone_number_input.value
-											                  };
-									               fetch(proxyurl + url, {
-											                        method: "POST",
-											                      body: JSON.stringify(data_dict)
-											                  }).then(res => res.json()).then(data => console.log(data)).catch(err => console.log(err));
+    <p>Your cellphone number:</p>
+    <p><input cellphone="cellphone number" id="cellphone_number_input"></p>
+    
+    <button type="submit" onclick="link_url()" id="btn">Add</button>
+    <br>
+    <pre></pre>
+    
+    <script type="text/javascript">
+        function link_url() {
+            var username_input = document.getElementById("username_input");
+            var student_id_input = document.getElementById("student_id_input");
+            var birthday_input = document.getElementById("birthday_input");
+            var cellphone_number_input = document.getElementById("cellphone_number_input");
+            const proxyurl = "https://cors-anywhere.herokuapp.com/";
+            const url = 'https://wmwit203j3.execute-api.us-east-1.amazonaws.com/post';
+            const data_dict = {
+                "name": username_input.value,
+                "student id": student_id_input.value,
+                "birthday": birthday_input.value,
+                "cellphone": cellphone_number_input.value
+            };
+            fetch(proxyurl + url, {
+                 method: "POST",
+                 body: JSON.stringify(data_dict)
+            }).then(res => res.json()).then(data => console.log(data)).catch(err => console.log(err));
 
-									               alert("We've received your Info!");
-									               window.location.reload();
-									           }
+            alert("We've received your Info!");
+            window.location.reload();
+        }
     </script>
 
-    </body>
+</body>
 </html>
-
