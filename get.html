@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html>
-	head>
-	   <meta charset="utf-8">
-	   </head>
-	    
-	   <body>
-		       <p>Name:</p>
-		         <input name="username" id="username_input">
-			    <button type="submit" onclick="link_url()" id="btn">Search</button>
-			        br>
-				    <pre></pre>
+<head>
+    <meta charset="utf-8">
+</head>
+ 
+<body>
+    <p>Name:</p>
+    <input name="username" id="username_input">
+    <button type="submit" onclick="link_url()" id="btn">Search</button>
+    <br>
+    <pre></pre>
 
-				        <script type="text/javascript">
-						        function link_url() {
-								            var input = document.getElementById('username_input');
-								            var url = 'https://wmwit203j3.execute-api.us-east-1.amazonaws.com/get?name=' +input.value;
-								            alert(url);
-								            window.open(url);
-								        }
+    <script type="text/javascript">
+        function link_url() {
+            var input = document.getElementById('username_input');
+            var url = 'https://wmwit203j3.execute-api.us-east-1.amazonaws.com/get?name=' +input.value;
+            alert(url);
+            window.open(url);
+        }
     </script>
 
-	   </body>
+</body>
 </html>
-
